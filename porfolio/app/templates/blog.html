@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-4 my-4">Blog</h1>
+    </div>
+  </div>
+  {% for post in blog_posts %}
+  <div class="row">
+    <div class="col-12">
+      <h2>{{ post.title }}</h2>
+      <p>
+        <small>Posted on {{ post.date_posted.strftime('%B %d, %Y') }}</small>
+      </p>
+      <p>{{ post.content }}</p>
+      <hr />
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
